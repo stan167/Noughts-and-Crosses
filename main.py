@@ -58,14 +58,27 @@ row3 = ["--","--","--"]
 
 while True:
     print_grid()
-    playerXrow = int(input("What row player X? "))
-    playerXColumn = int(input("What column player X? "))
-    if playerXrow == 1:
-        row1[playerXColumn - 1] = "X"
-    if playerXrow == 2:
-        row2[playerXColumn - 1] = "X"
-    if playerXrow == 3:
-        row3[playerXColumn - 1] = "X"
+    while True:
+        playerXrow = int(input("What row player X? "))
+        playerXColumn = int(input("What column player X? "))
+        if playerXrow == 1:
+            if row1[playerXColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row1[playerXColumn - 1] = "X"
+                break
+        if playerXrow == 2:
+            if row2[playerXColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row2[playerXColumn - 1] = "X"
+                break
+        if playerXrow == 3:
+            if row3[playerXColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row3[playerXColumn - 1] = "X"
+                break
     win_checker = check_win(row1, row2, row3)
     if win_checker == "xwin":
         print("X you won!")
@@ -74,14 +87,27 @@ while True:
         print("O you won!")
         break
     print_grid()
-    playerOrow = int(input("What row player O? "))
-    playerOColumn = int(input("What column player O? "))
-    if playerOrow == 1:
-        row1[playerOColumn - 1] = "O"
-    if playerOrow == 2:
-        row2[playerOColumn - 1] = "O"
-    if playerOrow == 3:
-        row3[playerOColumn - 1] = "O"
+    while True:
+        playerOrow = int(input("What row player O? "))
+        playerOColumn = int(input("What column player O? "))
+        if playerOrow == 1:
+            if row1[playerOColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row1[playerOColumn - 1] = "O"
+                break
+        if playerOrow == 2:
+            if row2[playerOColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row2[playerOColumn - 1] = "O"
+                break
+        if playerOrow == 3:
+            if row3[playerOColumn - 1] != "--":
+                print("Already selected!")
+            else:
+                row3[playerOColumn - 1] = "O"
+                break
     win_checker = check_win(row1, row2, row3)
     if win_checker == "xwin":
         print("X you won!")
